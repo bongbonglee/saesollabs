@@ -12,74 +12,164 @@
             margin: 0 auto;
             padding: 20px;
             color: #333;
+            background-color: #fafafa;
         }
         h1 { color: #1a73e8; }
-        h2 { color: #333; margin-top: 30px; }
+        h2 { color: #333; margin-top: 30px; border-bottom: 1px solid #eee; padding-bottom: 8px; }
+        h3 { color: #555; margin-top: 20px; }
         .last-updated { color: #666; font-size: 14px; }
+        table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f5f5f5; }
+        a { color: #1a73e8; }
     </style>
 </head>
 <body>
     <h1>Privacy Policy</h1>
-    <p class="last-updated">Last updated: February 1, 2026</p>
-    
-    <p>Saesol Labs ("we", "our", or "us") operates the CryptoBot - Alerts mobile application. This Privacy Policy explains how we collect, use, and protect your information.</p>
+    <p class="last-updated">Last updated: February 8, 2026</p>
+
+    <p>Saesol Labs ("we", "our", or "us") operates the CryptoBot - Alerts mobile application (the "App"). This Privacy Policy explains how we collect, use, disclose, and protect your information when you use our App.</p>
+
+    <p>By using the App, you agree to the collection and use of information in accordance with this Privacy Policy.</p>
 
     <h2>1. Information We Collect</h2>
-    <p>We collect the following types of information:</p>
+
+    <h3>1.1 Information You Provide</h3>
     <ul>
-        <li><strong>Account Information:</strong> Email address for authentication purposes</li>
-        <li><strong>Device Information:</strong> Device identifiers for push notification delivery</li>
-        <li><strong>Usage Data:</strong> App interaction data for analytics and improvement</li>
-        <li><strong>Portfolio Data:</strong> Cryptocurrency holdings you choose to track (stored securely)</li>
+        <li><strong>Account Information:</strong> Email address and display name when you create an account via email, Google Sign-In, or Sign in with Apple.</li>
+        <li><strong>Portfolio Data:</strong> Cryptocurrency holdings and watchlist data you choose to track within the App.</li>
+        <li><strong>Alert Configuration:</strong> Price alert rules and notification preferences you set up.</li>
+    </ul>
+
+    <h3>1.2 Information Collected Automatically</h3>
+    <ul>
+        <li><strong>Device Information:</strong> Device type, operating system version, and unique device identifiers (FCM token) for push notification delivery.</li>
+        <li><strong>Usage Data:</strong> App interaction data, feature usage patterns, and crash reports collected via Firebase Analytics.</li>
+        <li><strong>Advertising Identifiers:</strong> With your consent (via the App Tracking Transparency prompt on iOS), we may collect your device's advertising identifier (IDFA) to deliver personalized advertisements through Google AdMob.</li>
+        <li><strong>Log Data:</strong> IP address, access times, and pages viewed for security and diagnostic purposes.</li>
     </ul>
 
     <h2>2. How We Use Your Information</h2>
     <ul>
-        <li>User authentication and account management</li>
-        <li>Delivering push notifications for price alerts</li>
-        <li>Providing portfolio tracking and analysis features</li>
-        <li>Improving app performance and user experience</li>
-        <li>Displaying relevant advertisements</li>
+        <li>Provide, maintain, and improve the App's functionality</li>
+        <li>Authenticate users and manage accounts</li>
+        <li>Deliver push notifications for price alerts and market conditions</li>
+        <li>Provide portfolio tracking and analysis features</li>
+        <li>Process and manage subscription purchases</li>
+        <li>Display advertisements (personalized ads with your consent, or contextual ads without)</li>
+        <li>Analyze usage patterns to improve user experience</li>
+        <li>Detect and prevent fraud or abuse</li>
+        <li>Comply with legal obligations</li>
     </ul>
 
-    <h2>3. Third-Party Services</h2>
-    <p>We use the following third-party services:</p>
+    <h2>3. Third-Party Services and Data Sharing</h2>
+    <p>We share your data with the following third-party services, each for specific purposes:</p>
+
+    <table>
+        <tr>
+            <th>Service</th>
+            <th>Data Shared</th>
+            <th>Purpose</th>
+            <th>Privacy Policy</th>
+        </tr>
+        <tr>
+            <td>Firebase (Google)</td>
+            <td>Email, device token, usage data</td>
+            <td>Authentication, push notifications, analytics</td>
+            <td><a href="https://firebase.google.com/support/privacy" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>Google AdMob</td>
+            <td>Advertising ID (with consent), device info</td>
+            <td>Advertisement delivery</td>
+            <td><a href="https://policies.google.com/privacy" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>RevenueCat</td>
+            <td>User ID, purchase data</td>
+            <td>Subscription management</td>
+            <td><a href="https://www.revenuecat.com/privacy" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>Binance API</td>
+            <td>None (public market data only)</td>
+            <td>Cryptocurrency price data</td>
+            <td><a href="https://www.binance.com/en/privacy" target="_blank">Link</a></td>
+        </tr>
+    </table>
+
+    <p>We do not sell your personal information to any third party.</p>
+
+    <h2>4. Advertising and Tracking</h2>
+    <p>Our App uses Google AdMob to display advertisements. On iOS, we request your permission through Apple's App Tracking Transparency (ATT) framework before collecting your advertising identifier for personalized ads.</p>
     <ul>
-        <li><strong>Firebase:</strong> Authentication, analytics, and cloud messaging</li>
-        <li><strong>RevenueCat:</strong> Subscription and payment management</li>
-        <li><strong>Google AdMob:</strong> Advertisement delivery</li>
-        <li><strong>Binance API:</strong> Cryptocurrency market data</li>
+        <li><strong>If you allow tracking:</strong> You may see personalized ads based on your interests and activity.</li>
+        <li><strong>If you deny tracking:</strong> You will see contextual (non-personalized) ads that are not based on your activity or interests.</li>
     </ul>
+    <p>You can change your tracking preference at any time in your device's Settings > Privacy & Security > Tracking.</p>
+    <p>Google AdMob uses technologies including SKAdNetwork for ad attribution without identifying individual users. A list of ad network identifiers used is included in the App's configuration.</p>
 
-    <h2>4. Data Security</h2>
-    <p>We implement industry-standard security measures:</p>
+    <h2>5. Data Security</h2>
+    <p>We implement industry-standard security measures to protect your data:</p>
     <ul>
         <li>All data transmission is encrypted using HTTPS/TLS</li>
         <li>User credentials are managed through secure Firebase Authentication</li>
-        <li>We do not store payment information directly</li>
+        <li>Passwords are never stored in plain text</li>
+        <li>We do not store payment or credit card information directly — all payment processing is handled by Apple App Store and Google Play Store through RevenueCat</li>
+        <li>Database access is restricted and monitored</li>
     </ul>
 
-    <h2>5. Data Retention</h2>
-    <p>We retain your data for as long as your account is active. You may request deletion of your account and associated data at any time by contacting us.</p>
+    <h2>6. Data Retention and Deletion</h2>
+    <p>We retain your data for as long as your account is active or as needed to provide you with our services.</p>
 
-    <h2>6. Your Rights</h2>
-    <p>You have the right to:</p>
+    <h3>Account Deletion</h3>
+    <p>You can delete your account and all associated data at any time through the following methods:</p>
     <ul>
-        <li>Access your personal data</li>
-        <li>Request correction of inaccurate data</li>
-        <li>Request deletion of your data</li>
-        <li>Opt-out of marketing communications</li>
+        <li><strong>In-App:</strong> Go to Profile > Delete Account</li>
+        <li><strong>Email:</strong> Send a request to <a href="mailto:support@saesollabs.com">support@saesollabs.com</a></li>
     </ul>
+    <p>When you delete your account, the following data will be permanently removed:</p>
+    <ul>
+        <li>Account information (email, name)</li>
+        <li>Alert rules and notification settings</li>
+        <li>Portfolio and watchlist data</li>
+        <li>Subscription records (note: active subscriptions must be cancelled separately through the App Store or Google Play)</li>
+    </ul>
+    <p>Data deletion is processed immediately upon request. Some anonymized, aggregated data may be retained for analytics purposes.</p>
 
-    <h2>7. Children's Privacy</h2>
-    <p>Our app is not intended for users under 13 years of age. We do not knowingly collect personal information from children.</p>
+    <h2>7. International Data Transfers</h2>
+    <p>Your data may be transferred to and processed in countries outside of your country of residence, including the Republic of Korea and the United States, where our servers and third-party service providers are located. We ensure appropriate safeguards are in place for such transfers.</p>
 
-    <h2>8. Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the "Last updated" date.</p>
+    <h2>8. Your Rights</h2>
+    <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+    <ul>
+        <li><strong>Access:</strong> Request a copy of your personal data</li>
+        <li><strong>Correction:</strong> Request correction of inaccurate data</li>
+        <li><strong>Deletion:</strong> Request deletion of your data</li>
+        <li><strong>Portability:</strong> Request your data in a machine-readable format</li>
+        <li><strong>Opt-out:</strong> Opt-out of personalized advertising via ATT settings</li>
+        <li><strong>Withdraw Consent:</strong> Withdraw previously given consent at any time</li>
+    </ul>
+    <p>To exercise any of these rights, please contact us at <a href="mailto:support@saesollabs.com">support@saesollabs.com</a>.</p>
 
-    <h2>9. Contact Us</h2>
-    <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-    <p>Email: <a href="mailto:support@saesollabs.com">support@saesollabs.com</a></p>
+    <h3>For California Residents (CCPA)</h3>
+    <p>If you are a California resident, you have additional rights under the California Consumer Privacy Act (CCPA), including the right to know what personal information we collect and the right to request deletion. We do not sell personal information.</p>
+
+    <h3>For European Users (GDPR)</h3>
+    <p>If you are located in the European Economic Area (EEA), our legal basis for processing your personal data includes: your consent (for tracking and personalized ads), performance of a contract (for providing the service), and legitimate interests (for analytics and security).</p>
+
+    <h2>9. Children's Privacy</h2>
+    <p>Our App is not intended for users under 13 years of age (or 16 in the EEA). We do not knowingly collect personal information from children. If we become aware that we have collected data from a child, we will take steps to delete it promptly.</p>
+
+    <h2>10. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. We will notify you of significant changes by posting a notice in the App or by updating the "Last updated" date at the top of this page. We encourage you to review this Privacy Policy periodically.</p>
+
+    <h2>11. Contact Us</h2>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy, please contact us at:</p>
+    <p>
+        <strong>Saesol Labs</strong><br>
+        Email: <a href="mailto:support@saesollabs.com">support@saesollabs.com</a>
+    </p>
 
     <hr style="margin-top: 40px;">
     <p style="font-size: 12px; color: #666;">© 2026 Saesol Labs. All rights reserved.</p>
