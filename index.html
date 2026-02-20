@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saesol Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,78 +16,184 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #fafafa;
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 50%, #faf8ff 100%);
+            min-height: 100vh;
         }
 
         .container {
-            max-width: 700px;
+            max-width: 720px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 80px 24px 60px;
         }
 
         .header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 56px;
         }
 
         .header h1 {
-            font-size: 36px;
-            color: #1a1a1a;
-            margin-bottom: 8px;
+            font-size: 40px;
+            font-weight: 700;
+            color: #0f0f0f;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
         }
 
         .header p {
-            font-size: 16px;
-            color: #666;
+            font-size: 17px;
+            color: #6b7280;
+            font-weight: 400;
         }
 
-        .section {
-            background: #fff;
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 20px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-        }
-
-        .section h2 {
-            font-size: 20px;
-            color: #1a1a1a;
+        .section-title {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: #9ca3af;
             margin-bottom: 16px;
+            padding-left: 4px;
         }
 
-        .section ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .section li {
-            margin: 10px 0;
-        }
-
-        .section a {
-            color: #1a73e8;
+        .app-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 28px 28px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
             text-decoration: none;
-            font-size: 16px;
-            font-weight: 500;
+            display: block;
+            color: inherit;
         }
 
-        .section a:hover {
-            text-decoration: underline;
+        .app-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .app-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 10px;
+        }
+
+        .app-icon {
+            font-size: 32px;
+            line-height: 1;
+        }
+
+        .app-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: #0f0f0f;
+        }
+
+        .app-badge {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 6px;
+            margin-left: auto;
+        }
+
+        .badge-live {
+            background: #ecfdf5;
+            color: #059669;
+        }
+
+        .badge-coming {
+            background: #f3f4f6;
+            color: #6b7280;
+        }
+
+        .app-desc {
+            font-size: 15px;
+            color: #6b7280;
+            margin-left: 46px;
+        }
+
+        .links-section {
+            margin-top: 48px;
+        }
+
+        .links-grid {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            padding: 16px 24px;
+            color: #374151;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: background 0.15s ease;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .link-item:last-child {
+            border-bottom: none;
+        }
+
+        .link-item:hover {
+            background: #f9fafb;
+        }
+
+        .link-icon {
+            margin-right: 12px;
+            font-size: 18px;
+        }
+
+        .link-arrow {
+            margin-left: auto;
+            color: #d1d5db;
+            font-size: 14px;
         }
 
         .footer {
             text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
+            margin-top: 56px;
+            padding-top: 24px;
+            border-top: 1px solid #e5e7eb;
         }
 
         .footer p {
-            font-size: 12px;
-            color: #999;
+            font-size: 13px;
+            color: #9ca3af;
+        }
+
+        .footer a {
+            color: #6b7280;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #374151;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 48px 16px 40px;
+            }
+
+            .header h1 {
+                font-size: 32px;
+            }
+
+            .app-card {
+                padding: 22px 20px;
+            }
         }
     </style>
 </head>
@@ -93,28 +202,60 @@
     <div class="container">
         <div class="header">
             <h1>Saesol Labs</h1>
-            <p>Building smarter tools for crypto traders</p>
+            <p>Building smarter tools for everyone</p>
         </div>
 
-        <div class="section">
-            <h2>🤖 CryptoBot</h2>
-            <p style="color: #555; margin-bottom: 16px;">Smart crypto trading alerts with 30+ technical indicators.</p>
-            <ul>HEAD
-                <li><a href="/support/">Support & FAQ</a></li>
-                <li><a href="cryptobot/privacy-policy.html">Privacy Policy</a></li>
-                <li><a href="cryptobot/terms-of-service.html">Terms of Service</a></li>
-                <li><a href="cryptobot/disclaimer.html">Disclaimer</a></li>
-                <li><a href="cryptobot/account-deletion.html">Account Deletion</a></li>
-            </ul>
+        <p class="section-title">Our Apps</p>
+
+        <a class="app-card" href="https://cryptobot.saesollabs.com" target="_blank">
+            <div class="app-header">
+                <span class="app-icon">🤖</span>
+                <span class="app-name">CryptoBot</span>
+                <span class="app-badge badge-live">Live</span>
+            </div>
+            <p class="app-desc">Smart crypto trading alerts with 30+ technical indicators.</p>
+        </a>
+
+        <div class="links-section">
+            <p class="section-title">Company</p>
+            <div class="links-grid">
+                <a class="link-item" href="/support/">
+                    <span class="link-icon">💬</span>
+                    Support & FAQ
+                    <span class="link-arrow">›</span>
+                </a>
+                <a class="link-item" href="mailto:support@saesollabs.com">
+                    <span class="link-icon">📧</span>
+                    Contact Us
+                    <span class="link-arrow">›</span>
+                </a>
+            </div>
         </div>
 
-        <div class="section">
-            <h2>📋 Legal</h2>
-            <ul>
-                <li><a href="/cryptobot/privacy-policy.html">Privacy Policy</a></li>
-                <li><a href="/cryptobot/terms-of-service.html">Terms of Service</a></li>
-                <li><a href="/cryptobot/disclaimer.html">Disclaimer</a></li>
-            </ul>
+        <div class="links-section">
+            <p class="section-title">Legal</p>
+            <div class="links-grid">
+                <a class="link-item" href="/cryptobot/privacy-policy.html">
+                    <span class="link-icon">🔒</span>
+                    Privacy Policy
+                    <span class="link-arrow">›</span>
+                </a>
+                <a class="link-item" href="/cryptobot/terms-of-service.html">
+                    <span class="link-icon">📄</span>
+                    Terms of Service
+                    <span class="link-arrow">›</span>
+                </a>
+                <a class="link-item" href="/cryptobot/disclaimer.html">
+                    <span class="link-icon">⚠️</span>
+                    Disclaimer
+                    <span class="link-arrow">›</span>
+                </a>
+                <a class="link-item" href="/cryptobot/account-deletion.html">
+                    <span class="link-icon">🗑️</span>
+                    Account Deletion
+                    <span class="link-arrow">›</span>
+                </a>
+            </div>
         </div>
 
         <div class="footer">
