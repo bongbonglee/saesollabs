@@ -172,9 +172,7 @@ img {
     padding-bottom: 12px;
 }
 
-.eyebrow,
-.section-kicker,
-.journey-label {
+.section-kicker {
     margin: 0;
     color: var(--mint);
     font-size: 12px;
@@ -359,7 +357,6 @@ img {
 }
 
 .showcase,
-.journey,
 .final-cta {
     position: relative;
     padding: 116px 30px;
@@ -372,7 +369,6 @@ img {
 }
 
 .showcase__inner,
-.journey__inner,
 .final-cta__inner {
     width: min(100%, 1080px);
     margin: 0 auto;
@@ -386,7 +382,6 @@ img {
 }
 
 .section-copy h2,
-.journey h2,
 .final-cta h2 {
     margin: 16px 0 0;
     color: var(--text);
@@ -496,66 +491,6 @@ img {
 
 .device-stage:hover .device-shot--right {
     transform: translateY(8px) rotate(9deg) scale(0.82);
-}
-
-.journey {
-    background: #101016;
-    border-top: 0.5px solid var(--line-soft);
-    border-bottom: 0.5px solid var(--line-soft);
-}
-
-.journey__intro {
-    max-width: 700px;
-}
-
-.journey-track {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1px;
-    margin-top: 44px;
-    overflow: hidden;
-    border: 0.5px solid var(--line);
-    border-radius: 20px;
-    background: var(--line);
-}
-
-.journey-step {
-    min-height: 286px;
-    padding: 30px;
-    background: rgba(8, 8, 13, 0.92);
-}
-
-.journey-label {
-    color: var(--faint);
-}
-
-.journey-step h3 {
-    margin: 58px 0 0;
-    color: var(--text);
-    font-size: 22px;
-    line-height: 1.22;
-    font-weight: 760;
-    word-break: keep-all;
-    overflow-wrap: break-word;
-}
-
-.journey-step p {
-    margin: 16px 0 0;
-    color: var(--muted);
-    font-size: 15px;
-    line-height: 1.72;
-}
-
-.journey-step:nth-child(1) {
-    background: linear-gradient(180deg, rgba(130, 231, 212, 0.08), rgba(8, 8, 13, 0.92));
-}
-
-.journey-step:nth-child(2) {
-    background: linear-gradient(180deg, rgba(184, 150, 255, 0.08), rgba(8, 8, 13, 0.92));
-}
-
-.journey-step:nth-child(3) {
-    background: linear-gradient(180deg, rgba(255, 212, 138, 0.09), rgba(8, 8, 13, 0.92));
 }
 
 .final-cta {
@@ -694,17 +629,6 @@ img {
         min-height: 580px;
     }
 
-    .journey-track {
-        grid-template-columns: 1fr;
-    }
-
-    .journey-step {
-        min-height: auto;
-    }
-
-    .journey-step h3 {
-        margin-top: 42px;
-    }
 }
 
 @media (max-width: 720px) {
@@ -760,7 +684,6 @@ img {
     }
 
     .showcase,
-    .journey,
     .final-cta {
         padding: 72px 20px;
     }
@@ -789,10 +712,6 @@ img {
 
     .device-shot--right {
         right: -8%;
-    }
-
-    .journey-step {
-        padding: 24px;
     }
 
     .final-cta__inner {
