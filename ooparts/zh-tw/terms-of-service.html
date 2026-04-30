@@ -6,40 +6,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>服務條款 - ooparts</title>
     <style>
+        :root {
+            color-scheme: light dark;
+            --background: #FFFFFF;
+            --surface: #F8F8FA;
+            --surface-variant: #F0F0F5;
+            --text-primary: #1A1A2E;
+            --text-secondary: #6B6B80;
+            --divider: #E2E2E8;
+            --divider-soft: rgba(226, 226, 232, 0.5);
+            --link: #4A90E2;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background: #0A0A0F;
+                --surface: #16161F;
+                --surface-variant: #22222E;
+                --text-primary: #E8E8EC;
+                --text-secondary: #9090A8;
+                --divider: #2D2D3D;
+                --divider-soft: rgba(45, 45, 61, 0.5);
+            }
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            background: var(--background);
+            overflow-x: hidden;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'PingFang TC', 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.7;
-            color: #1a1a1a;
-            background: #fff;
-            padding: 24px 20px 60px;
+            font-family: Inter, 'Noto Sans KR', 'Noto Sans JP', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: var(--text-primary);
+            background: var(--background);
+            overflow-x: hidden;
             max-width: 720px;
             margin: 0 auto;
+            padding: 24px 16px 40px;
         }
 
         h1 {
             font-size: 24px;
-            font-weight: 800;
+            font-weight: 900;
+            letter-spacing: 0;
+            color: var(--text-primary);
             margin-bottom: 8px;
         }
 
         h2 {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 700;
-            margin: 32px 0 12px;
-            border-bottom: 1px solid #eee;
+            letter-spacing: 0;
+            color: var(--text-primary);
+            margin: 28px 0 12px;
             padding-bottom: 8px;
+            border-bottom: 0.5px solid var(--divider-soft);
+        }
+
+        h3 {
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0;
+            color: var(--text-primary);
+            margin: 18px 0 8px;
         }
 
         p,
         li {
+            overflow-wrap: anywhere;
             font-size: 15px;
-            color: #333;
+            font-weight: 400;
+            letter-spacing: 0;
+            color: var(--text-primary);
             margin-bottom: 8px;
         }
 
@@ -51,7 +96,8 @@
 
         .effective-date {
             font-size: 13px;
-            color: #888;
+            font-weight: 500;
+            color: var(--text-secondary);
             margin-bottom: 24px;
         }
 
@@ -59,32 +105,48 @@
             width: 100%;
             border-collapse: collapse;
             margin: 12px 0;
+            overflow-x: auto;
         }
 
         th,
         td {
-            border: 1px solid #ddd;
+            border: 0.5px solid var(--divider);
             padding: 10px 12px;
             font-size: 14px;
             text-align: left;
+            vertical-align: top;
         }
 
         th {
-            background: #f8f8f8;
+            background: var(--surface);
             font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        td {
+            color: var(--text-primary);
         }
 
         a {
-            color: #0066cc;
+            color: var(--link);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
 
         .footer {
             margin-top: 40px;
             padding-top: 16px;
-            border-top: 1px solid #eee;
-            font-size: 13px;
-            color: #888;
+            border-top: 0.5px solid var(--divider-soft);
             text-align: center;
+        }
+
+        .footer,
+        .footer p {
+            font-size: 13px;
+            color: var(--text-secondary);
         }
     </style>
 </head>
@@ -132,25 +194,9 @@
     <ol>
         <li><strong>傳送門定義：</strong> 傳送門是在服務內使用 DM、劇集等內容的應用程式內貨幣。</li>
         <li><strong>使用範圍：</strong> 傳送門僅限在 ooparts 服務內使用，不可兌換現金或轉讓給第三方。</li>
-        <li><strong>有效期限：</strong>
-            <table>
-                <tr>
-                    <th>類型</th>
-                    <th>有效期限</th>
-                </tr>
-                <tr>
-                    <td>付費傳送門（IAP/網頁付款）</td>
-                    <td>自取得時起5年</td>
-                </tr>
-                <tr>
-                    <td>免費傳送門（獎勵廣告、訂閱每日發放等）</td>
-                    <td>自取得時起180天</td>
-                </tr>
-            </table>
-        </li>
-        <li><strong>消耗方式：</strong> 有效期限即將到期的傳送門將自動優先消耗（先進先出）。</li>
+        <li><strong>發放：</strong> 付費傳送門會在 Apple App Store 或 Google Play 應用程式內購買正常處理後發放至服務帳號。免費傳送門可能依廣告獎勵、活動、營運政策或其他服務功能發放。</li>
+        <li><strong>營運調整：</strong> 免費傳送門的發放條件、數量或提供與否可能依服務營運狀況變更，重大變更將於服務內公告。</li>
     </ol>
-
     <h2>第7條 — 訂閱服務</h2>
     <ol>
         <li>本公司可提供月度訂閱服務，訂閱時將提供額外優惠。</li>
@@ -166,17 +212,11 @@
 
     <h2>第8條 — 退款政策</h2>
     <ol>
-        <li><strong>退款期限：</strong> 可在付款日起7日內申請退款。</li>
-        <li><strong>使用後不予退款：</strong> 若已有購買傳送門的使用記錄，則不予退款。</li>
-        <li><strong>對 AI 回應不滿：</strong> 對 AI 角色回應的主觀不滿不構成退款理由。</li>
-        <li><strong>退款受理：</strong>
-            <ul>
-                <li>應用程式付款：Apple App Store 或 Google Play Store</li>
-                <li>網頁付款：<a href="mailto:support@ooparts.app">support@ooparts.app</a></li>
-            </ul>
-        </li>
+        <li><strong>App 付款退款：</strong> 透過 Apple App Store 或 Google Play 完成付款的退款申請及核准與否，依各商店退款政策、審查程序及相關法令辦理。</li>
+        <li><strong>訂閱退款：</strong> 訂閱取消及退款申請須透過使用者付款的商店所提供的程序辦理。訂閱可於各商店的訂閱管理畫面取消。</li>
+        <li><strong>錯誤及支援：</strong> 若付款已完成但傳送門或訂閱權益未正常發放，可聯絡 <a href="mailto:support@ooparts.app">support@ooparts.app</a>。</li>
+        <li><strong>法定權利：</strong> 本條款不限制相關法令保障之使用者契約撤回、退款、救濟或損害賠償等權利。</li>
     </ol>
-
     <h2>第9條 — 智慧財產權</h2>
     <ol>
         <li>服務中包含的軟體、設計、標誌、文字、演算法等所有智慧財產權歸本公司所有。</li>

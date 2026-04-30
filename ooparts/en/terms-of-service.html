@@ -6,73 +6,154 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - ooparts</title>
     <style>
+        :root {
+            color-scheme: light dark;
+            --background: #FFFFFF;
+            --surface: #F8F8FA;
+            --surface-variant: #F0F0F5;
+            --text-primary: #1A1A2E;
+            --text-secondary: #6B6B80;
+            --divider: #E2E2E8;
+            --divider-soft: rgba(226, 226, 232, 0.5);
+            --link: #4A90E2;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background: #0A0A0F;
+                --surface: #16161F;
+                --surface-variant: #22222E;
+                --text-primary: #E8E8EC;
+                --text-secondary: #9090A8;
+                --divider: #2D2D3D;
+                --divider-soft: rgba(45, 45, 61, 0.5);
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            background: var(--background);
+            overflow-x: hidden;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
+            font-family: Inter, 'Noto Sans KR', 'Noto Sans JP', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: var(--text-primary);
+            background: var(--background);
+            overflow-x: hidden;
+            max-width: 720px;
             margin: 0 auto;
-            padding: 20px;
-            color: #333;
-            background-color: #fafafa;
+            padding: 24px 16px 40px;
         }
 
         h1 {
-            color: #7c3aed;
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 0;
+            color: var(--text-primary);
+            margin-bottom: 8px;
         }
 
         h2 {
-            color: #333;
-            margin-top: 30px;
-            border-bottom: 1px solid #eee;
+            font-size: 17px;
+            font-weight: 700;
+            letter-spacing: 0;
+            color: var(--text-primary);
+            margin: 28px 0 12px;
             padding-bottom: 8px;
+            border-bottom: 0.5px solid var(--divider-soft);
         }
 
         h3 {
-            color: #555;
-            margin-top: 20px;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0;
+            color: var(--text-primary);
+            margin: 18px 0 8px;
         }
 
-        .last-updated {
-            color: #666;
-            font-size: 14px;
+        p,
+        li {
+            overflow-wrap: anywhere;
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: 0;
+            color: var(--text-primary);
+            margin-bottom: 8px;
         }
 
-        a {
-            color: #7c3aed;
+        ul,
+        ol {
+            padding-left: 20px;
+            margin-bottom: 12px;
         }
 
-        ol>li {
-            margin: 8px 0;
-        }
-
-        ul>li {
-            margin: 6px 0;
+        .effective-date {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 12px 0;
+            overflow-x: auto;
         }
 
         th,
         td {
-            border: 1px solid #ddd;
+            border: 0.5px solid var(--divider);
             padding: 10px 12px;
-            text-align: left;
             font-size: 14px;
+            text-align: left;
+            vertical-align: top;
         }
 
         th {
-            background-color: #f5f3ff;
+            background: var(--surface);
             font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        td {
+            color: var(--text-primary);
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 16px;
+            border-top: 0.5px solid var(--divider-soft);
+            text-align: center;
+        }
+
+        .footer,
+        .footer p {
+            font-size: 13px;
+            color: var(--text-secondary);
         }
     </style>
 </head>
 
 <body>
     <h1>Terms of Service</h1>
-    <p class="last-updated">Effective date: March 1, 2026</p>
+    <p class="effective-date">Effective date: March 1, 2026</p>
 
     <h2>Article 1 - Purpose</h2>
     <p>These Terms of Service set forth the rights, obligations, and responsibilities between Saesol Labs (the "Company") and users (the "Members") in connection with the use of ooparts (the "Service") operated by the Company.</p>
@@ -113,25 +194,9 @@
     <ol>
         <li><strong>Definition of portals:</strong> Portals are in-app currency used for content such as DMs and episodes within the Service.</li>
         <li><strong>Scope of use:</strong> Portals may be used only within the ooparts Service and cannot be converted to cash or transferred to third parties.</li>
-        <li><strong>Validity period:</strong>
-            <table>
-                <tr>
-                    <th>Type</th>
-                    <th>Validity period</th>
-                </tr>
-                <tr>
-                    <td>Paid portals (IAP / web payment)</td>
-                    <td>5 years from acquisition</td>
-                </tr>
-                <tr>
-                    <td>Free portals (rewarded ads, daily subscription grants, etc.)</td>
-                    <td>180 days from acquisition</td>
-                </tr>
-            </table>
-        </li>
-        <li><strong>Consumption order:</strong> Portals closest to expiration are automatically consumed first (first-in, first-out).</li>
+        <li><strong>Granting portals:</strong> Paid portals are credited to the Service account when an Apple App Store or Google Play in-app purchase is successfully processed. Free portals may be granted through ad rewards, events, operational policies, or other Service features.</li>
+        <li><strong>Operational changes:</strong> The conditions, amount, or availability of free portal grants may change depending on Service operations. Material changes will be announced in the Service.</li>
     </ol>
-
     <h2>Article 7 - Subscription Service</h2>
     <ol>
         <li>The Company may provide a monthly subscription service, and additional benefits may be provided to subscribers.</li>
@@ -147,17 +212,11 @@
 
     <h2>Article 8 - Refund Policy</h2>
     <ol>
-        <li><strong>Refund request period:</strong> Refunds may be requested within 7 days of payment.</li>
-        <li><strong>No refund after use:</strong> Refunds are not available if purchased portals have been used.</li>
-        <li><strong>Dissatisfaction with AI responses:</strong> Subjective dissatisfaction with AI character responses is not a valid reason for a refund.</li>
-        <li><strong>Where to request refunds:</strong>
-            <ul>
-                <li>App payments: Apple App Store or Google Play Store</li>
-                <li>Web payments: <a href="mailto:support@ooparts.app">support@ooparts.app</a></li>
-            </ul>
-        </li>
+        <li><strong>App payment refunds:</strong> Refund requests and approval for payments made through the Apple App Store or Google Play are governed by each store's refund policy, review process, and applicable law.</li>
+        <li><strong>Subscription refunds:</strong> Subscription cancellation and refund requests must be made through the store where the user paid. Subscriptions can be cancelled from each store's subscription management screen.</li>
+        <li><strong>Errors and support:</strong> If payment was completed but portals or subscription benefits were not credited correctly, users may contact <a href="mailto:support@ooparts.app">support@ooparts.app</a>.</li>
+        <li><strong>Statutory rights:</strong> Nothing in this Article limits users' statutory rights to withdrawal, refund, remedy, or damages under applicable law.</li>
     </ol>
-
     <h2>Article 9 - Intellectual Property Rights</h2>
     <ol>
         <li>All intellectual property rights in the software, design, logos, text, algorithms, and other materials included in the Service belong to the Company.</li>
@@ -199,8 +258,7 @@
         Email: <a href="mailto:support@ooparts.app">support@ooparts.app</a>
     </p>
 
-    <hr style="margin-top: 40px;">
-    <p style="font-size: 12px; color: #666;">© 2026 Saesol Labs. All rights reserved.</p>
+    <div class="footer">© 2026 Saesol Labs. All rights reserved.</div>
 </body>
 
 </html>

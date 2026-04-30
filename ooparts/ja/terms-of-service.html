@@ -6,40 +6,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>利用規約 - ooparts</title>
     <style>
+        :root {
+            color-scheme: light dark;
+            --background: #FFFFFF;
+            --surface: #F8F8FA;
+            --surface-variant: #F0F0F5;
+            --text-primary: #1A1A2E;
+            --text-secondary: #6B6B80;
+            --divider: #E2E2E8;
+            --divider-soft: rgba(226, 226, 232, 0.5);
+            --link: #4A90E2;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background: #0A0A0F;
+                --surface: #16161F;
+                --surface-variant: #22222E;
+                --text-primary: #E8E8EC;
+                --text-secondary: #9090A8;
+                --divider: #2D2D3D;
+                --divider-soft: rgba(45, 45, 61, 0.5);
+            }
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            background: var(--background);
+            overflow-x: hidden;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.7;
-            color: #1a1a1a;
-            background: #fff;
-            padding: 24px 20px 60px;
+            font-family: Inter, 'Noto Sans KR', 'Noto Sans JP', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: var(--text-primary);
+            background: var(--background);
+            overflow-x: hidden;
             max-width: 720px;
             margin: 0 auto;
+            padding: 24px 16px 40px;
         }
 
         h1 {
             font-size: 24px;
-            font-weight: 800;
+            font-weight: 900;
+            letter-spacing: 0;
+            color: var(--text-primary);
             margin-bottom: 8px;
         }
 
         h2 {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 700;
-            margin: 32px 0 12px;
-            border-bottom: 1px solid #eee;
+            letter-spacing: 0;
+            color: var(--text-primary);
+            margin: 28px 0 12px;
             padding-bottom: 8px;
+            border-bottom: 0.5px solid var(--divider-soft);
+        }
+
+        h3 {
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0;
+            color: var(--text-primary);
+            margin: 18px 0 8px;
         }
 
         p,
         li {
+            overflow-wrap: anywhere;
             font-size: 15px;
-            color: #333;
+            font-weight: 400;
+            letter-spacing: 0;
+            color: var(--text-primary);
             margin-bottom: 8px;
         }
 
@@ -51,7 +96,8 @@
 
         .effective-date {
             font-size: 13px;
-            color: #888;
+            font-weight: 500;
+            color: var(--text-secondary);
             margin-bottom: 24px;
         }
 
@@ -59,32 +105,48 @@
             width: 100%;
             border-collapse: collapse;
             margin: 12px 0;
+            overflow-x: auto;
         }
 
         th,
         td {
-            border: 1px solid #ddd;
+            border: 0.5px solid var(--divider);
             padding: 10px 12px;
             font-size: 14px;
             text-align: left;
+            vertical-align: top;
         }
 
         th {
-            background: #f8f8f8;
+            background: var(--surface);
             font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        td {
+            color: var(--text-primary);
         }
 
         a {
-            color: #0066cc;
+            color: var(--link);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
 
         .footer {
             margin-top: 40px;
             padding-top: 16px;
-            border-top: 1px solid #eee;
-            font-size: 13px;
-            color: #888;
+            border-top: 0.5px solid var(--divider-soft);
             text-align: center;
+        }
+
+        .footer,
+        .footer p {
+            font-size: 13px;
+            color: var(--text-secondary);
         }
     </style>
 </head>
@@ -132,25 +194,9 @@
     <ol>
         <li><strong>ポータルの定義：</strong> ポータルはサービス内でDM、エピソードなどのコンテンツを利用するためのアプリ内通貨です。</li>
         <li><strong>使用範囲：</strong> ポータルはoopartsサービス内でのみ使用でき、現金への換金や第三者への譲渡はできません。</li>
-        <li><strong>有効期間：</strong>
-            <table>
-                <tr>
-                    <th>種類</th>
-                    <th>有効期間</th>
-                </tr>
-                <tr>
-                    <td>有料ポータル（IAP/Web決済）</td>
-                    <td>取得時点から5年</td>
-                </tr>
-                <tr>
-                    <td>無料ポータル（リワード広告、サブスク日次付与など）</td>
-                    <td>取得時点から180日</td>
-                </tr>
-            </table>
-        </li>
-        <li><strong>消費方式：</strong> 有効期間が近いポータルから自動的に先に消費されます（先入先出）。</li>
+        <li><strong>付与：</strong> 有料ポータルはApple App StoreまたはGoogle Playのアプリ内課金が正常に処理された場合、サービスアカウントに付与されます。無料ポータルは広告報酬、イベント、運営ポリシーなどサービス機能に応じて付与される場合があります。</li>
+        <li><strong>運営上の調整：</strong> 無料ポータルの付与条件、数量、提供有無はサービス運営状況に応じて変更される場合があり、重要な変更はサービス内で案内します。</li>
     </ol>
-
     <h2>第7条 — サブスクリプションサービス</h2>
     <ol>
         <li>当社は月額サブスクリプションサービスを提供する場合があり、サブスクリプション時に追加特典が提供されます。</li>
@@ -166,17 +212,11 @@
 
     <h2>第8条 — 返金ポリシー</h2>
     <ol>
-        <li><strong>返金期限：</strong> 決済日から7日以内に返金を申請できます。</li>
-        <li><strong>使用後の返金不可：</strong> 購入したポータルの使用履歴がある場合、返金はできません。</li>
-        <li><strong>AI回答への不満：</strong> AIキャラクターの回答に対する主観的な不満は返金理由に該当しません。</li>
-        <li><strong>返金窓口：</strong>
-            <ul>
-                <li>アプリ決済: Apple App StoreまたはGoogle Play Store</li>
-                <li>Web決済: <a href="mailto:support@ooparts.app">support@ooparts.app</a></li>
-            </ul>
-        </li>
+        <li><strong>アプリ決済の返金：</strong> Apple App StoreまたはGoogle Playを通じて行われた決済の返金申請及び承認可否は、各ストアの返金ポリシー、審査手続き及び関連法令に従います。</li>
+        <li><strong>サブスクリプションの返金：</strong> サブスクリプションの解約及び返金申請は、利用者が決済したストアで提供される手続きに従って行う必要があります。サブスクリプションの解約は各ストアのサブスクリプション管理画面で行えます。</li>
+        <li><strong>エラー及びサポート：</strong> 決済が完了したにもかかわらずポータルまたはサブスクリプション特典が正常に付与されない場合、<a href="mailto:support@ooparts.app">support@ooparts.app</a>までお問い合わせいただけます。</li>
+        <li><strong>法定の権利：</strong> 本条項は、関連法令上保障される利用者の契約撤回、返金、救済、損害賠償等の権利を制限するものではありません。</li>
     </ol>
-
     <h2>第9条 — 知的財産権</h2>
     <ol>
         <li>サービスに含まれるソフトウェア、デザイン、ロゴ、テキスト、アルゴリズムなどに対するすべての知的財産権は当社に帰属します。</li>

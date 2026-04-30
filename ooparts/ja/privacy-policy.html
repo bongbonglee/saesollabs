@@ -6,46 +6,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>プライバシーポリシー - ooparts</title>
     <style>
+        :root {
+            color-scheme: light dark;
+            --background: #FFFFFF;
+            --surface: #F8F8FA;
+            --surface-variant: #F0F0F5;
+            --text-primary: #1A1A2E;
+            --text-secondary: #6B6B80;
+            --divider: #E2E2E8;
+            --divider-soft: rgba(226, 226, 232, 0.5);
+            --link: #4A90E2;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background: #0A0A0F;
+                --surface: #16161F;
+                --surface-variant: #22222E;
+                --text-primary: #E8E8EC;
+                --text-secondary: #9090A8;
+                --divider: #2D2D3D;
+                --divider-soft: rgba(45, 45, 61, 0.5);
+            }
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            background: var(--background);
+            overflow-x: hidden;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.7;
-            color: #1a1a1a;
-            background: #fff;
-            padding: 24px 20px 60px;
+            font-family: Inter, 'Noto Sans KR', 'Noto Sans JP', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: var(--text-primary);
+            background: var(--background);
+            overflow-x: hidden;
             max-width: 720px;
             margin: 0 auto;
+            padding: 24px 16px 40px;
         }
 
         h1 {
             font-size: 24px;
-            font-weight: 800;
+            font-weight: 900;
+            letter-spacing: 0;
+            color: var(--text-primary);
             margin-bottom: 8px;
         }
 
         h2 {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 700;
-            margin: 32px 0 12px;
-            border-bottom: 1px solid #eee;
+            letter-spacing: 0;
+            color: var(--text-primary);
+            margin: 28px 0 12px;
             padding-bottom: 8px;
+            border-bottom: 0.5px solid var(--divider-soft);
         }
 
         h3 {
             font-size: 15px;
             font-weight: 600;
-            margin: 16px 0 8px;
+            letter-spacing: 0;
+            color: var(--text-primary);
+            margin: 18px 0 8px;
         }
 
         p,
         li {
+            overflow-wrap: anywhere;
             font-size: 15px;
-            color: #333;
+            font-weight: 400;
+            letter-spacing: 0;
+            color: var(--text-primary);
             margin-bottom: 8px;
         }
 
@@ -57,21 +96,57 @@
 
         .effective-date {
             font-size: 13px;
-            color: #888;
+            font-weight: 500;
+            color: var(--text-secondary);
             margin-bottom: 24px;
         }
 
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            overflow-x: auto;
+        }
+
+        th,
+        td {
+            border: 0.5px solid var(--divider);
+            padding: 10px 12px;
+            font-size: 14px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: var(--surface);
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        td {
+            color: var(--text-primary);
+        }
+
         a {
-            color: #0066cc;
+            color: var(--link);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
 
         .footer {
             margin-top: 40px;
             padding-top: 16px;
-            border-top: 1px solid #eee;
-            font-size: 13px;
-            color: #888;
+            border-top: 0.5px solid var(--divider-soft);
             text-align: center;
+        }
+
+        .footer,
+        .footer p {
+            font-size: 13px;
+            color: var(--text-secondary);
         }
     </style>
 </head>
@@ -79,49 +154,58 @@
 <body>
     <h1>プライバシーポリシー</h1>
     <p class="effective-date">施行日: 2026年3月1日</p>
-    <p>Saesol
-        Labs（以下「当社」）は、ooparts（以下「サービス」）の利用者の個人情報を重視し、「個人情報保護法」に基づき利用者の個人情報を保護し、関連する苦情を迅速に処理するため、次のようにプライバシーポリシーを策定・公開します。
-    </p>
+    <p>Saesol Labs（以下「当社」）は、ooparts（以下「サービス」）の利用者の個人情報を重視し、「個人情報保護法」に基づき利用者の個人情報を保護し、関連する苦情を迅速に処理するため、次のようにプライバシーポリシーを策定・公開します。</p>
 
     <h2>1. 収集する個人情報の項目及び方法</h2>
     <h3>1-1. 会員登録時の収集</h3>
     <ul>
         <li>メールアドレス、ニックネーム、プロフィール写真（任意）</li>
-        <li>ソーシャルログイン時：ソーシャルアカウント識別子（UID）</li>
+        <li>対応ログイン提供者（Apple、Google、Kakao、Naver、LINE）のソーシャルアカウント識別子（UID）</li>
+        <li>14歳以上であることの確認結果</li>
     </ul>
     <h3>1-2. サービス利用過程での自動収集</h3>
     <ul>
         <li>デバイス情報（OS、デバイスモデル）、アプリバージョン</li>
-        <li>サービス利用記録、アクセス日時</li>
+        <li>サービス利用記録、アクセス日時、エラーログ</li>
+        <li>Firebase/Google Analytics による画面表示、機能利用イベント、アプリインスタンス識別子</li>
     </ul>
     <h3>1-3. サービス利用中の提供</h3>
     <ul>
-        <li>AIキャラクターとの会話内容</li>
-        <li>エピソードプレイ記録</li>
-        <li>決済情報（決済履歴はApple/Googleが管理）</li>
+        <li>AIキャラクターとの会話内容、エピソード入力及びプレイ記録</li>
+        <li>利用者が作成したキャラクター、エピソード、プロフィール、アップロード画像、画像URLなどの利用者提供コンテンツ</li>
+        <li>ポータル購入、消費、サブスクリプション状態などの決済及びサービス利用記録</li>
     </ul>
 
     <h2>2. 個人情報の利用目的</h2>
     <p>当社は収集した個人情報を以下の目的で利用します：</p>
     <ol>
         <li><strong>サービス提供：</strong> 会員識別、AIキャラクター会話サービス、エピソードコンテンツ提供</li>
-        <li><strong>サービス改善：</strong> AIモデル品質向上、ユーザビリティ分析、エラー改善</li>
+        <li><strong>サービス改善：</strong> AIモデル品質向上、画面・機能の利用状況分析、エラー改善</li>
         <li><strong>決済管理：</strong> ポータル購入・消費履歴管理、サブスクリプション更新・解約処理</li>
         <li><strong>カスタマーサポート：</strong> お問い合わせ対応、紛争解決</li>
         <li><strong>法的義務：</strong> 関連法令に基づく義務の履行</li>
     </ol>
 
     <h2>3. 個人情報の第三者提供</h2>
-    <p>当社は原則として利用者の個人情報を第三者に提供しません。ただし、以下の場合は例外とします：</p>
-    <ol>
-        <li>利用者が事前に同意した場合</li>
-        <li>法令により求められる場合</li>
-    </ol>
+    <p>当社は原則として利用者の個人情報を第三者に提供しません。ただし、利用者が事前に同意した場合または法令により求められる場合は例外とします。</p>
+
+    <h2>3-1. 個人情報の処理委託及び外部サービス</h2>
+    <p>当社はサービス運営、決済管理、AI機能提供、利用状況分析のため、以下の外部サービスを利用することがあります：</p>
+    <ul>
+        <li>Google Firebase / Google Analytics：認証、クラウドストレージ、アプリ分析、画面・機能利用イベントの収集</li>
+        <li>Apple、Google、Kakao、Naver、LINE：ソーシャルログイン及びアカウント識別</li>
+        <li>RevenueCat：サブスクリプション及びアプリ内課金状態の管理、決済ライフサイクルイベントの Firebase/Google Analytics 連携</li>
+        <li>Apple / Google：アプリストア決済処理及び決済履歴管理</li>
+        <li>OpenRouter及びAIモデル/API提供者：AI会話、エピソード、画像ベース機能を提供するための入力コンテンツ処理</li>
+    </ul>
+    <p>当社はメールアドレス、ニックネーム、プロフィール画像、会話本文、エピソード入力本文、検索語句本文、Firebase UID の原文を Google Analytics に送信しません。</p>
 
     <h2>4. 個人情報の保有及び廃棄</h2>
     <h3>4-1. 保有期間</h3>
     <ul>
-        <li>会員退会時に即時廃棄（法令による保管義務がある場合は該当期間中保管）</li>
+        <li>会員アカウント情報及びサービス利用コンテンツ：退会または処理目的の達成まで</li>
+        <li>決済、精算、紛争対応及びアクセス記録：関連法令で定められた期間または紛争対応に必要な期間</li>
+        <li>法令上保管義務がある情報は、該当期間中分離保管した後に廃棄します。</li>
     </ul>
     <h3>4-2. 廃棄手続き</h3>
     <ol>
@@ -135,7 +219,7 @@
         <li><strong>閲覧請求：</strong> 本人の個人情報処理状況の閲覧</li>
         <li><strong>訂正・削除請求：</strong> 不正確な個人情報の訂正または削除</li>
         <li><strong>処理停止請求：</strong> 個人情報処理の停止</li>
-        <li><strong>アカウント削除：</strong> アプリ内の設定からアカウント削除が可能。削除時にすべての個人情報が即時廃棄されます</li>
+        <li><strong>アカウント削除：</strong> アプリ内の設定からアカウントを削除できます。法令上保管が必要な情報は分離保管される場合があります。</li>
     </ol>
     <p>上記の権利行使は <a href="mailto:support@ooparts.app">support@ooparts.app</a> を通じてリクエストできます。</p>
 
@@ -148,24 +232,23 @@
     </ol>
 
     <h2>7. 児童の個人情報保護</h2>
-    <p>当社は14歳未満の児童の個人情報を収集しません。14歳未満の児童がサービスに登録した事実が確認された場合、該当アカウントを直ちに削除し、収集された個人情報を廃棄します。</p>
+    <p>当社は14歳未満の児童の個人情報を収集しません。14歳未満の児童がサービスに登録した事実が確認された場合、該当アカウントを削除し、関連する個人情報を廃棄します。</p>
 
     <h2>8. プライバシーポリシーの変更</h2>
     <ol>
         <li>本ポリシーは関連法令及び内部運営方針に基づき変更される場合があります。</li>
-        <li>変更時、施行日の7日前にサービス内のお知らせを通じてご案内します。</li>
+        <li>重要な変更は施行前にサービス内のお知らせ等を通じてご案内します。</li>
     </ol>
 
     <h2>9. 個人情報保護責任者</h2>
     <p>個人情報処理に関するお問い合わせ、苦情、被害救済：</p>
-    <p>Saesol Labs（セソルラブス）<br>個人情報保護責任者: イ・ボンヒョン<br>メール: <a href="mailto:support@ooparts.app">support@ooparts.app</a>
-    </p>
+    <p>Saesol Labs（セソルラブス）<br>個人情報保護責任者: イ・ボンヒョン<br>メール: <a href="mailto:support@ooparts.app">support@ooparts.app</a></p>
 
     <h2>10. 権益侵害の救済方法</h2>
     <p>個人情報侵害に関する相談が必要な場合、以下の機関にお問い合わせいただけます：</p>
     <ul>
-        <li>個人情報侵害申告センター: <a href="https://privacy.kisa.or.kr">privacy.kisa.or.kr</a> (118)</li>
-        <li>個人情報紛争調整委員会: <a href="https://www.kopico.go.kr">www.kopico.go.kr</a> (1833-6972)</li>
+        <li>個人情報侵害申告センター: <a href="https://privacy.kisa.or.kr" target="_blank" rel="noopener">privacy.kisa.or.kr</a> (118)</li>
+        <li>個人情報紛争調整委員会: <a href="https://www.kopico.go.kr" target="_blank" rel="noopener">www.kopico.go.kr</a> (1833-6972)</li>
     </ul>
 
     <div class="footer">© 2026 Saesol Labs. All rights reserved.</div>

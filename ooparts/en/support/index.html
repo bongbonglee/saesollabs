@@ -6,82 +6,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ooparts Support - Saesol Labs</title>
     <style>
+        :root {
+            color-scheme: light dark;
+            --background: #FFFFFF;
+            --surface: #F8F8FA;
+            --surface-variant: #F0F0F5;
+            --text-primary: #1A1A2E;
+            --text-secondary: #6B6B80;
+            --divider: #E2E2E8;
+            --divider-soft: rgba(226, 226, 232, 0.5);
+            --link: #4A90E2;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background: #0A0A0F;
+                --surface: #16161F;
+                --surface-variant: #22222E;
+                --text-primary: #E8E8EC;
+                --text-secondary: #9090A8;
+                --divider: #2D2D3D;
+                --divider-soft: rgba(45, 45, 61, 0.5);
+            }
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            background: var(--background);
+            overflow-x: hidden;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #fafafa;
+            font-family: Inter, 'Noto Sans KR', 'Noto Sans JP', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: var(--text-primary);
+            background: var(--background);
         }
 
         .container {
-            max-width: 700px;
+            width: 100%;
+            max-width: 720px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 40px 16px;
         }
 
         .header {
-            text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 28px;
         }
 
         .header h1 {
-            font-size: 32px;
-            color: #1a1a1a;
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 0;
+            color: var(--text-primary);
             margin-bottom: 8px;
         }
 
         .header p {
-            font-size: 16px;
-            color: #666;
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--text-secondary);
         }
 
         .language-nav {
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
             gap: 10px;
             margin-top: 18px;
         }
 
         .language-nav a {
-            color: #7c3aed;
+            display: inline-flex;
+            align-items: center;
+            min-height: 32px;
+            padding: 6px 10px;
+            border: 1px solid var(--divider);
+            border-radius: 25px;
+            color: var(--text-primary);
             text-decoration: none;
             font-size: 14px;
             font-weight: 500;
         }
 
         .language-nav a[aria-current="page"] {
-            color: #555;
+            background: var(--divider-soft);
+            border-color: transparent;
             font-weight: 700;
         }
 
         .card {
-            background: #fff;
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 20px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            background: var(--background);
+            border: 0.5px solid var(--divider);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 16px;
         }
 
         .card h2 {
-            font-size: 20px;
-            color: #1a1a1a;
+            font-size: 17px;
+            font-weight: 700;
+            letter-spacing: 0;
+            color: var(--text-primary);
             margin-bottom: 12px;
         }
 
         .card p {
-            color: #555;
+            overflow-wrap: anywhere;
+            font-size: 15px;
+            color: var(--text-primary);
             margin-bottom: 8px;
         }
 
         .card a {
-            color: #7c3aed;
+            color: var(--link);
             text-decoration: none;
             font-weight: 500;
         }
@@ -91,39 +134,42 @@
         }
 
         .faq-item {
-            border-bottom: 1px solid #eee;
-            padding: 16px 0;
+            border-bottom: 0.5px solid var(--divider-soft);
+            padding: 14px 0;
         }
 
         .faq-item:last-child {
             border-bottom: none;
+            padding-bottom: 0;
         }
 
         .faq-item h3 {
-            font-size: 16px;
-            color: #1a1a1a;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-primary);
             margin-bottom: 6px;
         }
 
         .faq-item p {
+            overflow-wrap: anywhere;
             font-size: 14px;
-            color: #666;
+            color: var(--text-secondary);
         }
 
         .footer {
-            text-align: center;
             margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
+            padding-top: 16px;
+            border-top: 0.5px solid var(--divider-soft);
         }
 
         .footer p {
-            font-size: 12px;
-            color: #999;
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
         }
 
         .footer a {
-            color: #7c3aed;
+            color: var(--link);
             text-decoration: none;
         }
     </style>
@@ -134,12 +180,12 @@
         <div class="header">
             <h1>ooparts Support</h1>
             <p>Help for AI character conversations, episodes, account, and billing</p>
-            <nav class="language-nav" aria-label="Language">
+            <div class="language-nav" role="navigation" aria-label="Language">
                 <a href="/ooparts/support/">한국어</a>
                 <a href="/ooparts/ja/support/">日本語</a>
                 <a href="/ooparts/zh-tw/support/">繁體中文</a>
                 <a href="/ooparts/en/support/" aria-current="page">English</a>
-            </nav>
+            </div>
         </div>
 
         <div class="card">
@@ -173,12 +219,12 @@
 
             <div class="faq-item">
                 <h3>How do I request a refund?</h3>
-                <p>You can request a refund within 7 days of payment if the purchased portals have not been used. For app payments, use Apple App Store or Google Play Store. For web payments, contact support by email.</p>
+                <p>Refund requests and approval for in-app payments are governed by Apple App Store or Google Play refund policies, review processes, and applicable law. If payment was completed but portals or subscription benefits were not credited, contact <a href="mailto:support@ooparts.app">support@ooparts.app</a>.</p>
             </div>
 
             <div class="faq-item">
                 <h3>How do I delete my account?</h3>
-                <p>You can delete your account from the in-app settings. Personal information is deleted immediately, except where retention is required by applicable law.</p>
+                <p>You can delete your account from the in-app settings. Information that must be retained under applicable law may be stored separately for the required period.</p>
             </div>
         </div>
 
