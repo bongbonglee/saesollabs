@@ -436,6 +436,10 @@ img {
 .device-stage {
     position: relative;
     min-height: 620px;
+    --shot-side-x: clamp(180px, 15vw, 220px);
+    --shot-side-bottom: 44px;
+    --shot-side-scale: 0.82;
+    --shot-side-opacity: 0.74;
 }
 
 .device-shot {
@@ -448,7 +452,13 @@ img {
     border-radius: 32px;
     background: #000000;
     box-shadow: 0 34px 86px rgba(0, 0, 0, 0.42);
-    transition: transform 240ms ease, border-color 240ms ease, opacity 240ms ease;
+    z-index: var(--shot-z, 1);
+    bottom: var(--shot-bottom, var(--shot-side-bottom));
+    left: 50%;
+    opacity: var(--shot-opacity, var(--shot-side-opacity));
+    transform: translateX(calc(-50% + var(--shot-x, 0px))) translateY(var(--shot-lift, 0)) rotate(var(--shot-rotate, 0deg)) scale(var(--shot-scale, 1));
+    transform-origin: center bottom;
+    transition: transform 260ms ease, border-color 220ms ease, box-shadow 220ms ease, opacity 220ms ease;
 }
 
 .device-shot img {
@@ -458,39 +468,80 @@ img {
 }
 
 .device-shot--main {
-    z-index: 2;
-    left: 48%;
-    bottom: 12px;
-    opacity: 0.86;
-    transform: translateX(-50%) rotate(1deg) scale(0.96);
+    --shot-z: 3;
+    --shot-bottom: 0;
+    --shot-opacity: 1;
+    --shot-rotate: 1deg;
+    --shot-scale: 1;
+    --shot-x: 0px;
 }
 
 .device-shot--left {
-    z-index: 3;
-    left: 3%;
-    bottom: 0;
-    opacity: 1;
-    transform: rotate(-4deg) scale(1);
+    --shot-z: 2;
+    --shot-rotate: -7deg;
+    --shot-scale: var(--shot-side-scale);
+    --shot-x: calc(var(--shot-side-x) * -1);
 }
 
 .device-shot--right {
-    z-index: 1;
-    right: 3%;
-    bottom: 88px;
-    opacity: 0.56;
-    transform: rotate(7deg) scale(0.82);
+    --shot-z: 2;
+    --shot-rotate: 7deg;
+    --shot-scale: var(--shot-side-scale);
+    --shot-x: var(--shot-side-x);
 }
 
-.device-stage:hover .device-shot--main {
-    transform: translateX(-50%) translateY(4px) rotate(2deg) scale(0.96);
+.device-stage.is-shot-left-active .device-shot--left,
+.device-stage.is-shot-main-active .device-shot--main,
+.device-stage.is-shot-right-active .device-shot--right {
+    --shot-z: 4;
+    --shot-bottom: 0;
+    --shot-opacity: 1;
+    --shot-rotate: 1deg;
+    --shot-scale: 1;
+    --shot-x: 0px;
 }
 
-.device-stage:hover .device-shot--left {
-    transform: translateY(-8px) rotate(-5deg) scale(1);
+.device-stage.is-shot-left-active .device-shot--right,
+.device-stage.is-shot-main-active .device-shot--left,
+.device-stage.is-shot-right-active .device-shot--main {
+    --shot-z: 2;
+    --shot-bottom: var(--shot-side-bottom);
+    --shot-opacity: var(--shot-side-opacity);
+    --shot-rotate: -7deg;
+    --shot-scale: var(--shot-side-scale);
+    --shot-x: calc(var(--shot-side-x) * -1);
 }
 
-.device-stage:hover .device-shot--right {
-    transform: translateY(8px) rotate(9deg) scale(0.82);
+.device-stage.is-shot-left-active .device-shot--main,
+.device-stage.is-shot-main-active .device-shot--right,
+.device-stage.is-shot-right-active .device-shot--left {
+    --shot-z: 2;
+    --shot-bottom: var(--shot-side-bottom);
+    --shot-opacity: var(--shot-side-opacity);
+    --shot-rotate: 7deg;
+    --shot-scale: var(--shot-side-scale);
+    --shot-x: var(--shot-side-x);
+}
+
+.js-enabled .device-shot {
+    cursor: pointer;
+}
+
+.device-shot.is-active {
+    border-color: rgba(255, 255, 255, 0.42);
+    box-shadow: 0 38px 96px rgba(0, 0, 0, 0.5);
+}
+
+.js-enabled .device-shot:not(.is-active):hover,
+.js-enabled .device-shot:not(.is-active):focus-visible {
+    --shot-lift: -10px;
+    border-color: rgba(255, 255, 255, 0.34);
+    opacity: 0.9;
+}
+
+.js-enabled .device-shot:focus-visible {
+    outline: 2px solid rgba(130, 231, 212, 0.72);
+    outline-offset: 4px;
 }
 
 .final-cta {
@@ -704,63 +755,19 @@ img {
     }
 
     .device-stage {
-        display: flex;
-        gap: 16px;
-        min-height: auto;
-        width: auto;
-        margin: 0 -20px;
-        padding: 10px 20px 24px;
-        overflow-x: auto;
-        overflow-y: visible;
-        overscroll-behavior-x: contain;
-        scroll-padding: 20px;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: thin;
+        min-height: clamp(390px, 118vw, 470px);
+        width: min(100%, 360px);
+        margin: 0 auto;
+        overflow: visible;
+        --shot-side-x: clamp(86px, 27vw, 108px);
+        --shot-side-bottom: 30px;
+        --shot-side-scale: 0.76;
+        --shot-side-opacity: 0.72;
     }
 
     .device-shot {
-        position: relative;
-        flex: 0 0 clamp(210px, 68vw, 250px);
-        width: auto;
+        width: clamp(180px, 58vw, 222px);
         border-radius: 26px;
-        scroll-snap-align: center;
-    }
-
-    .device-shot--main {
-        left: auto;
-        bottom: auto;
-        z-index: auto;
-        opacity: 1;
-        transform: none;
-    }
-
-    .device-shot--left {
-        left: auto;
-        bottom: auto;
-        z-index: auto;
-        opacity: 1;
-        transform: none;
-    }
-
-    .device-shot--right {
-        right: auto;
-        bottom: auto;
-        z-index: auto;
-        opacity: 1;
-        transform: none;
-    }
-
-    .device-stage:hover .device-shot--main {
-        transform: none;
-    }
-
-    .device-stage:hover .device-shot--left {
-        transform: none;
-    }
-
-    .device-stage:hover .device-shot--right {
-        transform: none;
     }
 
     .final-cta__inner {

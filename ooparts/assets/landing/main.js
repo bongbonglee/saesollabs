@@ -27,4 +27,67 @@
             observer.observe(item);
         });
     }
+
+    var shotClassNames = {
+        left: "is-shot-left-active",
+        main: "is-shot-main-active",
+        right: "is-shot-right-active"
+    };
+
+    function shotKeyFor(item) {
+        if (item.classList.contains("device-shot--left")) {
+            return "left";
+        }
+
+        if (item.classList.contains("device-shot--right")) {
+            return "right";
+        }
+
+        return "main";
+    }
+
+    function setActiveShot(stage, activeKey) {
+        Object.keys(shotClassNames).forEach(function (key) {
+            stage.classList.toggle(shotClassNames[key], key === activeKey);
+        });
+
+        Array.prototype.forEach.call(stage.querySelectorAll(".device-shot"), function (item) {
+            var isActive = shotKeyFor(item) === activeKey;
+            item.classList.toggle("is-active", isActive);
+            item.setAttribute("aria-pressed", isActive ? "true" : "false");
+        });
+    }
+
+    Array.prototype.forEach.call(document.querySelectorAll(".device-stage"), function (stage) {
+        var shots = Array.prototype.slice.call(stage.querySelectorAll(".device-shot"));
+
+        if (shots.length === 0) {
+            return;
+        }
+
+        shots.forEach(function (item) {
+            var key = shotKeyFor(item);
+            var image = item.querySelector("img");
+            var label = image && image.getAttribute("alt") ? image.getAttribute("alt") : "ooparts preview";
+
+            item.setAttribute("role", "button");
+            item.setAttribute("tabindex", "0");
+            item.setAttribute("aria-label", label);
+
+            item.addEventListener("click", function () {
+                setActiveShot(stage, key);
+            });
+
+            item.addEventListener("keydown", function (event) {
+                if (event.key !== "Enter" && event.key !== " ") {
+                    return;
+                }
+
+                event.preventDefault();
+                setActiveShot(stage, key);
+            });
+        });
+
+        setActiveShot(stage, "main");
+    });
 }());
