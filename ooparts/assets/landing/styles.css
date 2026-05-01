@@ -654,12 +654,18 @@ img {
     }
 
     .hero__visual {
-        min-height: 370px;
+        display: flex;
+        justify-content: center;
+        min-height: auto;
     }
 
     .hero__visual img {
-        width: min(94vw, 410px);
-        bottom: -46px;
+        position: relative;
+        right: auto;
+        bottom: auto;
+        width: min(86vw, 360px);
+        max-width: 100%;
+        transform: none;
     }
 
     .hero h1 {
@@ -698,20 +704,51 @@ img {
     }
 
     .device-stage {
-        min-height: 470px;
+        min-height: clamp(360px, 110vw, 430px);
+        width: min(100%, 360px);
+        margin: 0 auto;
+        overflow: visible;
     }
 
     .device-shot {
-        width: min(56vw, 220px);
+        width: clamp(138px, 42vw, 170px);
         border-radius: 26px;
     }
 
+    .device-shot--main {
+        left: 50%;
+        bottom: 0;
+        z-index: 3;
+        opacity: 1;
+        transform: translateX(-50%) rotate(1deg) scale(1);
+    }
+
     .device-shot--left {
-        left: -8%;
+        left: 0;
+        bottom: 28px;
+        z-index: 2;
+        opacity: 0.78;
+        transform: rotate(-6deg) scale(0.9);
     }
 
     .device-shot--right {
-        right: -8%;
+        right: 0;
+        bottom: 28px;
+        z-index: 2;
+        opacity: 0.78;
+        transform: rotate(6deg) scale(0.9);
+    }
+
+    .device-stage:hover .device-shot--main {
+        transform: translateX(-50%) rotate(1deg) scale(1);
+    }
+
+    .device-stage:hover .device-shot--left {
+        transform: rotate(-6deg) scale(0.9);
+    }
+
+    .device-stage:hover .device-shot--right {
+        transform: rotate(6deg) scale(0.9);
     }
 
     .final-cta__inner {
