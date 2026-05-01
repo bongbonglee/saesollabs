@@ -323,32 +323,6 @@ img {
     animation: portraitFloat 8s ease-in-out infinite alternate;
 }
 
-.hero__caption {
-    position: absolute;
-    right: 18px;
-    bottom: 38px;
-    width: min(100%, 340px);
-    padding: 16px 18px;
-    border: 0.5px solid var(--line);
-    border-radius: 18px;
-    color: var(--muted);
-    background: rgba(7, 7, 11, 0.48);
-    backdrop-filter: blur(18px);
-    box-shadow: var(--shadow);
-}
-
-.hero__caption strong {
-    display: block;
-    margin-bottom: 5px;
-    color: var(--text);
-    font-size: 14px;
-}
-
-.hero__caption span {
-    font-size: 13px;
-    line-height: 1.58;
-}
-
 [data-enter] {
     opacity: 1;
     transform: none;
@@ -665,10 +639,6 @@ img {
         width: min(86vw, 530px);
         transform: translateX(50%);
         animation: none;
-    }
-
-    .hero__caption {
-        display: none;
     }
 
     .hero__text {
