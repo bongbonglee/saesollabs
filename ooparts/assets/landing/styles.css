@@ -315,9 +315,9 @@ img {
 
 .hero__visual img {
     position: absolute;
-    right: -62px;
-    bottom: -76px;
-    width: min(52vw, 585px);
+    right: calc((min(100vw - 60px, 1200px) - 100vw) / 2);
+    bottom: 0;
+    width: min(45vw, 500px);
     max-width: none;
     filter: drop-shadow(0 28px 58px rgba(0, 0, 0, 0.58));
     animation: portraitFloat 8s ease-in-out infinite alternate;
@@ -602,11 +602,11 @@ img {
 
 @keyframes portraitFloat {
     from {
-        transform: translate3d(0, 0, 0) rotate(-0.35deg);
+        transform: translate3d(0, 0, 0);
     }
 
     to {
-        transform: translate3d(0, -14px, 0) rotate(0.28deg);
+        transform: translate3d(0, -10px, 0);
     }
 }
 
@@ -629,14 +629,14 @@ img {
     }
 
     .hero__visual {
-        min-height: 510px;
+        min-height: 620px;
         order: -1;
     }
 
     .hero__visual img {
         right: 50%;
-        bottom: -52px;
-        width: min(86vw, 530px);
+        bottom: 0;
+        width: min(78vw, 480px);
         transform: translateX(50%);
         animation: none;
     }
