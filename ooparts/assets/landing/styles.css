@@ -704,51 +704,63 @@ img {
     }
 
     .device-stage {
-        min-height: clamp(360px, 110vw, 430px);
-        width: min(100%, 360px);
-        margin: 0 auto;
-        overflow: visible;
+        display: flex;
+        gap: 16px;
+        min-height: auto;
+        width: auto;
+        margin: 0 -20px;
+        padding: 10px 20px 24px;
+        overflow-x: auto;
+        overflow-y: visible;
+        overscroll-behavior-x: contain;
+        scroll-padding: 20px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
     }
 
     .device-shot {
-        width: clamp(138px, 42vw, 170px);
+        position: relative;
+        flex: 0 0 clamp(210px, 68vw, 250px);
+        width: auto;
         border-radius: 26px;
+        scroll-snap-align: center;
     }
 
     .device-shot--main {
-        left: 50%;
-        bottom: 0;
-        z-index: 3;
+        left: auto;
+        bottom: auto;
+        z-index: auto;
         opacity: 1;
-        transform: translateX(-50%) rotate(1deg) scale(1);
+        transform: none;
     }
 
     .device-shot--left {
-        left: 0;
-        bottom: 28px;
-        z-index: 2;
-        opacity: 0.78;
-        transform: rotate(-6deg) scale(0.9);
+        left: auto;
+        bottom: auto;
+        z-index: auto;
+        opacity: 1;
+        transform: none;
     }
 
     .device-shot--right {
-        right: 0;
-        bottom: 28px;
-        z-index: 2;
-        opacity: 0.78;
-        transform: rotate(6deg) scale(0.9);
+        right: auto;
+        bottom: auto;
+        z-index: auto;
+        opacity: 1;
+        transform: none;
     }
 
     .device-stage:hover .device-shot--main {
-        transform: translateX(-50%) rotate(1deg) scale(1);
+        transform: none;
     }
 
     .device-stage:hover .device-shot--left {
-        transform: rotate(-6deg) scale(0.9);
+        transform: none;
     }
 
     .device-stage:hover .device-shot--right {
-        transform: rotate(6deg) scale(0.9);
+        transform: none;
     }
 
     .final-cta__inner {
