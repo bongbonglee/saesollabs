@@ -210,8 +210,7 @@ img {
     margin-top: 30px;
 }
 
-.market-button,
-.secondary-link {
+.market-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -228,14 +227,11 @@ img {
 }
 
 .market-button:hover,
-.market-button:focus-visible,
-.secondary-link:hover,
-.secondary-link:focus-visible {
+.market-button:focus-visible {
     transform: translateY(-3px);
 }
 
 .market-button:active,
-.secondary-link:active,
 .language-nav a:active {
     transform: translateY(0) scale(0.99);
 }
@@ -256,20 +252,14 @@ img {
     height: 52px;
 }
 
+.market-button--google-play {
+    width: 176px;
+}
+
 .market-badge--google-play {
     max-width: none;
     height: 68px;
-    margin: -8px -9px;
-}
-
-.secondary-link {
-    border-radius: 12px;
-    padding: 0 18px;
-    color: var(--text);
-    border: 0.5px solid var(--line);
-    background: rgba(255, 255, 255, 0.055);
-    font-size: 14px;
-    font-weight: 800;
+    margin: -8px 0;
 }
 
 .hero__visual {
@@ -640,6 +630,12 @@ img {
         padding: 126px 20px 56px;
     }
 
+    .hero__text {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+
     .hero__visual {
         display: flex;
         justify-content: center;
@@ -658,6 +654,8 @@ img {
     .hero h1 {
         font-size: 36px;
         line-height: 1.1;
+        max-width: 100%;
+        overflow-wrap: anywhere;
     }
 
     .hero__copy,
@@ -671,8 +669,7 @@ img {
         flex-direction: column;
     }
 
-    .market-button,
-    .secondary-link {
+    .market-button {
         width: 100%;
     }
 
