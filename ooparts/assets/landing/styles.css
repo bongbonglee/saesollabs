@@ -215,12 +215,15 @@ img {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
+    height: 52px;
     text-decoration: none;
     transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
 }
 
 .market-button {
     border-radius: 8px;
+    overflow: hidden;
     line-height: 0;
 }
 
@@ -246,20 +249,20 @@ img {
     display: block;
     width: auto;
     max-width: 100%;
-    height: auto;
+    height: 52px;
 }
 
 .market-badge--app-store {
-    width: 160px;
+    height: 52px;
 }
 
 .market-badge--google-play {
-    width: 176px;
+    max-width: none;
+    height: 68px;
     margin: -8px -9px;
 }
 
 .secondary-link {
-    min-height: 52px;
     border-radius: 12px;
     padding: 0 18px;
     color: var(--text);
