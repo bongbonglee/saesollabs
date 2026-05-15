@@ -215,45 +215,13 @@ img {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 52px;
-    border-radius: 12px;
     text-decoration: none;
-    transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease, box-shadow 180ms ease;
+    transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
 }
 
 .market-button {
-    gap: 12px;
-    min-width: 176px;
-    padding: 10px 17px;
-    color: #ffffff;
-    background: #000000;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
-}
-
-.market-button--apple .market-button__icon {
-    color: #ffffff;
-    font-size: 23px;
-}
-
-.market-button--play {
-    color: #202124;
-    background: #ffffff;
-    border-color: rgba(255, 255, 255, 0.94);
-}
-
-.market-button--play .market-button__icon {
-    position: relative;
-    width: 24px;
-    height: 24px;
-}
-
-.market-button--play .market-button__icon::before {
-    content: "";
-    position: absolute;
-    inset: 3px 2px;
-    clip-path: polygon(0 0, 100% 50%, 0 100%);
-    background: linear-gradient(135deg, #00a173 0%, #4285f4 46%, #fbbc04 72%, #ea4335 100%);
+    border-radius: 8px;
+    line-height: 0;
 }
 
 .market-button:hover,
@@ -269,35 +237,30 @@ img {
     transform: translateY(0) scale(0.99);
 }
 
-.market-button__icon {
-    display: grid;
-    place-items: center;
-    width: 30px;
-    height: 30px;
-    flex: 0 0 auto;
+.market-button:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.78);
+    outline-offset: 4px;
 }
 
-.market-button span:last-child {
-    display: grid;
-    gap: 1px;
+.market-badge {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
 }
 
-.market-button small {
-    color: currentColor;
-    opacity: 0.68;
-    font-size: 11px;
-    font-weight: 800;
-    line-height: 1.1;
+.market-badge--app-store {
+    width: 160px;
 }
 
-.market-button strong {
-    color: currentColor;
-    font-size: 17px;
-    font-weight: 900;
-    line-height: 1.1;
+.market-badge--google-play {
+    width: 176px;
+    margin: -8px -9px;
 }
 
 .secondary-link {
+    min-height: 52px;
+    border-radius: 12px;
     padding: 0 18px;
     color: var(--text);
     border: 0.5px solid var(--line);
