@@ -282,8 +282,8 @@ img {
     --hero-character-x: -50%;
     position: absolute;
     left: 50%;
-    bottom: clamp(-190px, -11vw, -120px);
-    width: clamp(440px, 43vw, 560px);
+    bottom: clamp(-330px, -20vw, -250px);
+    width: clamp(470px, 45vw, 600px);
     max-width: none;
     transform: translateX(var(--hero-character-x));
     z-index: 1;
@@ -603,8 +603,8 @@ img {
 
     .hero__visual img {
         right: auto;
-        bottom: clamp(-220px, -20vw, -150px);
-        width: min(76vw, 500px);
+        bottom: clamp(-300px, -34vw, -220px);
+        width: min(78vw, 540px);
         transform: translateX(var(--hero-character-x));
         animation: none;
     }
@@ -656,8 +656,8 @@ img {
     .hero__visual img {
         position: absolute;
         right: auto;
-        bottom: clamp(-122px, -24vw, -86px);
-        width: min(84vw, 360px);
+        bottom: clamp(-210px, -47vw, -160px);
+        width: min(92vw, 430px);
         max-width: none;
         transform: translateX(var(--hero-character-x));
     }
