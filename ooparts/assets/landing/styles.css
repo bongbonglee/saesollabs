@@ -270,6 +270,30 @@ img {
     overflow: hidden;
 }
 
+.hero__visual::before,
+.hero__visual::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+}
+
+.hero__visual::before {
+    inset: 6% -8% 8% -6%;
+    z-index: 0;
+    background:
+        radial-gradient(ellipse at 58% 42%, rgba(111, 218, 255, 0.16) 0%, rgba(111, 218, 255, 0.08) 34%, transparent 62%),
+        radial-gradient(ellipse at 76% 38%, rgba(242, 104, 255, 0.12) 0%, rgba(242, 104, 255, 0.05) 32%, transparent 58%);
+}
+
+.hero__visual::after {
+    left: -8%;
+    right: -8%;
+    bottom: 0;
+    height: clamp(170px, 18vw, 250px);
+    z-index: 2;
+    background: linear-gradient(180deg, transparent 0%, rgba(7, 7, 11, 0.2) 38%, rgba(7, 7, 11, 0.9) 100%);
+}
+
 .hero__visual img {
     --hero-character-x: -50%;
     position: absolute;
@@ -279,6 +303,11 @@ img {
     max-width: none;
     transform: translateX(var(--hero-character-x));
     z-index: 1;
+    opacity: 1;
+    mix-blend-mode: normal;
+    filter:
+        drop-shadow(0 20px 36px rgba(89, 213, 255, 0.12))
+        drop-shadow(0 12px 28px rgba(239, 97, 255, 0.08));
     animation: portraitFloat 8s ease-in-out infinite alternate;
 }
 
@@ -592,6 +621,14 @@ img {
         order: -1;
     }
 
+    .hero__visual::before {
+        inset: 4% -10% 10% -10%;
+    }
+
+    .hero__visual::after {
+        height: clamp(150px, 24vw, 210px);
+    }
+
     .hero__visual img {
         right: auto;
         bottom: clamp(-300px, -34vw, -220px);
@@ -642,6 +679,14 @@ img {
     .hero__visual {
         display: block;
         min-height: clamp(350px, 78vw, 430px);
+    }
+
+    .hero__visual::before {
+        inset: 2% -14% 12% -14%;
+    }
+
+    .hero__visual::after {
+        height: clamp(112px, 31vw, 136px);
     }
 
     .hero__visual img {
