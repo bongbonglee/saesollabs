@@ -142,8 +142,8 @@ img {
 
 .hero::before {
     background:
-        linear-gradient(90deg, rgba(6, 6, 10, 0.97) 0%, rgba(6, 6, 10, 0.82) 40%, rgba(6, 6, 10, 0.3) 100%),
-        linear-gradient(180deg, rgba(6, 6, 10, 0.08) 0%, rgba(6, 6, 10, 0.4) 68%, #07070b 100%),
+        linear-gradient(90deg, rgba(6, 6, 10, 0.97) 0%, rgba(6, 6, 10, 0.82) 36%, rgba(6, 6, 10, 0.08) 64%, rgba(6, 6, 10, 0) 100%),
+        linear-gradient(180deg, rgba(6, 6, 10, 0.08) 0%, rgba(6, 6, 10, 0.16) 68%, rgba(7, 7, 11, 0.82) 100%),
         url("/ooparts/assets/landing/hero-portal-bg.png") center right / cover no-repeat;
 }
 
@@ -270,14 +270,6 @@ img {
     overflow: hidden;
 }
 
-.hero__visual::before {
-    content: "";
-    position: absolute;
-    inset: 8% 2% 0;
-    background: radial-gradient(ellipse at 58% 48%, rgba(6, 6, 10, 0.98) 0%, rgba(6, 6, 10, 0.86) 56%, rgba(6, 6, 10, 0) 78%);
-    pointer-events: none;
-}
-
 .hero__visual img {
     --hero-character-x: -50%;
     position: absolute;
@@ -287,7 +279,6 @@ img {
     max-width: none;
     transform: translateX(var(--hero-character-x));
     z-index: 1;
-    filter: drop-shadow(0 28px 58px rgba(0, 0, 0, 0.58));
     animation: portraitFloat 8s ease-in-out infinite alternate;
 }
 
@@ -586,7 +577,7 @@ img {
 
     .hero::before {
         background:
-            linear-gradient(180deg, rgba(6, 6, 10, 0.18) 0%, rgba(6, 6, 10, 0.9) 56%, #07070b 100%),
+            linear-gradient(180deg, rgba(6, 6, 10, 0.06) 0%, rgba(6, 6, 10, 0.14) 42%, rgba(6, 6, 10, 0.82) 68%, #07070b 100%),
             url("/ooparts/assets/landing/hero-portal-bg.png") center top / cover no-repeat;
     }
 
