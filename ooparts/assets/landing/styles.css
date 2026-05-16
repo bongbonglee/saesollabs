@@ -14,6 +14,8 @@
     --coral: #ff9a8b;
     --gold: #ffd48a;
     --shadow: 0 34px 90px rgba(0, 0, 0, 0.42);
+    --market-width: 176px;
+    --market-height: 52px;
 }
 
 * {
@@ -193,6 +195,12 @@ img {
     overflow-wrap: break-word;
 }
 
+.hero h1[data-enter] {
+    opacity: 1;
+    transform: none;
+    animation: none;
+}
+
 .hero__copy {
     max-width: 530px;
     margin: 22px 0 0;
@@ -200,6 +208,8 @@ img {
     font-size: 17px;
     line-height: 1.72;
     font-weight: 500;
+    word-break: keep-all;
+    overflow-wrap: break-word;
 }
 
 .hero__actions {
@@ -214,16 +224,21 @@ img {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box;
-    height: 52px;
     text-decoration: none;
     transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
 }
 
 .market-button {
+    width: var(--market-width);
+    height: var(--market-height);
     border-radius: 8px;
     overflow: hidden;
+    background: transparent;
     line-height: 0;
+}
+
+.market-button--google-play {
+    border: 1px solid rgba(255, 255, 255, 0.68);
 }
 
 .market-button:hover,
@@ -244,50 +259,58 @@ img {
 .market-badge {
     display: block;
     width: auto;
-    max-width: 100%;
-    height: 52px;
+    max-width: none;
+    height: auto;
 }
 
 .market-badge--app-store {
-    height: 52px;
-}
-
-.market-button--google-play {
-    width: 176px;
+    width: var(--market-width);
+    height: var(--market-height);
+    object-fit: fill;
 }
 
 .market-badge--google-play {
-    max-width: none;
-    height: 68px;
+    width: var(--market-width);
+    height: auto;
     margin: -8px 0;
 }
 
 .hero__visual {
     position: relative;
     align-self: stretch;
-    min-height: clamp(590px, 52vw, 680px);
+    min-height: clamp(830px, 63vw, 902px);
     margin: 0;
     overflow: hidden;
 }
 
-.hero__visual::before {
+.hero__visual::after {
     content: "";
     position: absolute;
-    inset: 8% 2% 0;
-    background: radial-gradient(ellipse at 58% 48%, rgba(6, 6, 10, 0.98) 0%, rgba(6, 6, 10, 0.86) 56%, rgba(6, 6, 10, 0) 78%);
     pointer-events: none;
+}
+
+.hero__visual::after {
+    left: 50%;
+    bottom: clamp(2px, 1.4vw, 16px);
+    width: min(64%, 460px);
+    height: clamp(34px, 4vw, 56px);
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.48) 0%, rgba(0, 0, 0, 0.2) 42%, rgba(0, 0, 0, 0) 72%);
+    transform: translateX(-48%);
+    filter: blur(4px);
+    z-index: 1;
 }
 
 .hero__visual img {
     --hero-character-x: -50%;
     position: absolute;
     left: 50%;
-    bottom: clamp(-190px, -11vw, -120px);
-    width: clamp(440px, 43vw, 560px);
+    bottom: 0;
+    width: clamp(520px, 43vw, 600px);
     max-width: none;
     transform: translateX(var(--hero-character-x));
-    z-index: 1;
-    filter: drop-shadow(0 28px 58px rgba(0, 0, 0, 0.58));
+    z-index: 2;
+    filter: drop-shadow(0 30px 64px rgba(0, 0, 0, 0.64));
     animation: portraitFloat 8s ease-in-out infinite alternate;
 }
 
@@ -597,15 +620,20 @@ img {
     }
 
     .hero__visual {
-        min-height: clamp(430px, 63vw, 540px);
+        display: flex;
+        justify-content: center;
+        min-height: 0;
         order: -1;
+        overflow: visible;
     }
 
     .hero__visual img {
+        position: relative;
+        left: auto;
         right: auto;
-        bottom: clamp(-220px, -20vw, -150px);
-        width: min(76vw, 500px);
-        transform: translateX(var(--hero-character-x));
+        bottom: auto;
+        width: min(82vw, 500px);
+        transform: none;
         animation: none;
     }
 
@@ -639,34 +667,26 @@ img {
     }
 
     .hero {
-        padding: 126px 20px 56px;
-    }
-
-    .hero__text {
-        width: 100%;
-        min-width: 0;
-        max-width: 100%;
+        padding: 170px 20px 56px;
     }
 
     .hero__visual {
-        display: block;
-        min-height: clamp(350px, 78vw, 430px);
+        min-height: 0;
     }
 
     .hero__visual img {
-        position: absolute;
+        position: relative;
+        left: auto;
         right: auto;
-        bottom: clamp(-122px, -24vw, -86px);
-        width: min(84vw, 360px);
+        bottom: auto;
+        width: min(92vw, 460px);
         max-width: none;
-        transform: translateX(var(--hero-character-x));
+        transform: none;
     }
 
     .hero h1 {
         font-size: 36px;
         line-height: 1.1;
-        max-width: 100%;
-        overflow-wrap: anywhere;
     }
 
     .hero__copy,
@@ -676,12 +696,8 @@ img {
     }
 
     .hero__actions {
-        align-items: stretch;
+        align-items: center;
         flex-direction: column;
-    }
-
-    .market-button {
-        width: 100%;
     }
 
     .showcase,
