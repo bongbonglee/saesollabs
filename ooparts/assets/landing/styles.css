@@ -717,9 +717,9 @@ img {
         left: auto;
         right: auto;
         bottom: auto;
-        width: min(104vw, 520px);
+        width: min(94vw, 520px);
         max-width: none;
-        transform: translateX(clamp(-42px, -9vw, -28px));
+        transform: none;
     }
 
     .hero h1 {
